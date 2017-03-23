@@ -10,12 +10,12 @@ import java.util.List;
 /**
  * Created by yenhuang on 3/22/17.
  */
-public class MainPresenter implements Presenter<MainView>, LoaderManager.LoaderCallbacks<List<AlbumTitle>> {
+class MainPresenter implements Presenter<MainView>, LoaderManager.LoaderCallbacks<List<AlbumTitle>> {
 
     private MainView mMainView;
 
 
-    public void initialize() {
+    void initialize() {
         mMainView.showProgress();
 
         if (mMainView instanceof MainpageActivity) {

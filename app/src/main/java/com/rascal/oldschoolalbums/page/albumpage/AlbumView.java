@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Created by yenhuang on 3/23/17.
  */
-public interface AlbumView extends ProgressView {
+interface AlbumView extends ProgressView {
 
     void viewAlbums(List<AlbumDetail> albumDetails);
 

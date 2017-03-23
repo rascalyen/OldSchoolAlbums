@@ -10,13 +10,13 @@ import java.util.List;
 /**
  * Created by yenhuang on 3/23/17.
  */
-public class AlbumPresenter implements Presenter<AlbumView>, LoaderManager.LoaderCallbacks<List<AlbumDetail>> {
+class AlbumPresenter implements Presenter<AlbumView>, LoaderManager.LoaderCallbacks<List<AlbumDetail>> {
 
     private AlbumView mAlbumView;
     private int albumId;
 
 
-    public void initialize(int id) {
+    void initialize(int id) {
         this.albumId = id;
         mAlbumView.showProgress();
 

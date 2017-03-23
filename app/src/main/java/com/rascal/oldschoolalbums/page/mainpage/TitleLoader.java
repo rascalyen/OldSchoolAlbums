@@ -17,7 +17,7 @@ import java.util.List;
  */
 public class TitleLoader extends AsyncTaskLoader<List<AlbumTitle>> {
 
-    public TitleLoader(Context context) {
+    TitleLoader(Context context) {
         super(context);
     }
 

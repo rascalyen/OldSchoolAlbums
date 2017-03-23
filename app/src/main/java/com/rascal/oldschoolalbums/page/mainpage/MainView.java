@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Created by yenhuang on 3/22/17.
  */
-public interface MainView extends ProgressView {
+interface MainView extends ProgressView {
 
     void clearTitles();
     void viewTitles(List<AlbumTitle> albumTitles);

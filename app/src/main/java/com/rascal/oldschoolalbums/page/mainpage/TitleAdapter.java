@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * Created by yenhuang on 3/22/17.
  */
-public class TitleAdapter extends RecyclerView.Adapter<TitleAdapter.TitleHolder> {
+class TitleAdapter extends RecyclerView.Adapter<TitleAdapter.TitleHolder> {
 
     private List<AlbumTitle> albumTitles;
 
@@ -48,7 +48,7 @@ public class TitleAdapter extends RecyclerView.Adapter<TitleAdapter.TitleHolder>
     }
 
 
-    public void addAll(List<AlbumTitle> titles) {
+    void addAll(List<AlbumTitle> titles) {
         if (!this.albumTitles.isEmpty()) {
             this.albumTitles.clear();
             this.albumTitles.addAll(titles);
@@ -66,7 +66,7 @@ public class TitleAdapter extends RecyclerView.Adapter<TitleAdapter.TitleHolder>
         }
     }
 
-    public void setAlbumTitles(ArrayList<AlbumTitle> albumTitles) {
+    void setAlbumTitles(ArrayList<AlbumTitle> albumTitles) {
         this.albumTitles = albumTitles;
     }
 
@@ -75,7 +75,7 @@ public class TitleAdapter extends RecyclerView.Adapter<TitleAdapter.TitleHolder>
 
         TextView title;
 
-        public TitleHolder(final View itemView) {
+        TitleHolder(final View itemView) {
             super(itemView);
 
             this.title = (TextView) itemView.findViewById(R.id.tv_title);

@@ -34,7 +34,7 @@ public class NetworkUtil {
             if (conn.getResponseCode() == HttpsURLConnection.HTTP_OK) {
 
                 BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()));
-                StringBuffer res = new StringBuffer();
+                StringBuilder res = new StringBuilder();
                 String line;
                 while ((line = reader.readLine()) != null) {
                     res.append(line);

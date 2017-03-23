@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * Created by yenhuang on 3/23/17.
  */
-public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.AlbumHolder> {
+class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.AlbumHolder> {
 
     private List<AlbumDetail> albums;
 
@@ -37,7 +37,7 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.AlbumHolder>
         return albums == null ? 0 : albums.size();
     }
 
-    public void addAll(List<AlbumDetail> albums) {
+    void addAll(List<AlbumDetail> albums) {
         if (!this.albums.isEmpty()) {
             this.albums.clear();
             this.albums.addAll(albums);
@@ -48,7 +48,7 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.AlbumHolder>
         notifyDataSetChanged();
     }
 
-    public void setAlbums(List<AlbumDetail> albums) {
+    void setAlbums(List<AlbumDetail> albums) {
         this.albums = albums;
     }
 
@@ -57,7 +57,7 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.AlbumHolder>
 
         ImageView thumbnail;
 
-        public AlbumHolder(final View itemView) {
+        AlbumHolder(final View itemView) {
             super(itemView);
 
             this.thumbnail = (ImageView) itemView.findViewById(R.id.iv_thumbnail);

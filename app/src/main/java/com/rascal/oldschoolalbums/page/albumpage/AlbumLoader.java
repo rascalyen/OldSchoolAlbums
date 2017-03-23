@@ -16,11 +16,11 @@ import java.util.List;
 /**
  * Created by yenhuang on 3/23/17.
  */
-public class AlbumLoader extends AsyncTaskLoader<List<AlbumDetail>> {
+class AlbumLoader extends AsyncTaskLoader<List<AlbumDetail>> {
 
     private int albumId;
 
-    public AlbumLoader(Context context, int albumId) {
+    AlbumLoader(Context context, int albumId) {
         super(context);
 
         this.albumId = albumId;

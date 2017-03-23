@@ -37,7 +37,7 @@ class AlbumLoader extends AsyncTaskLoader<List<AlbumDetail>> {
 
                 AlbumDetail album = new AlbumDetail();
                 album.setAlbumId(jsonObject.getInt("albumId"));
-                album.setId(jsonObject.getInt("albumId"));
+                album.setId(jsonObject.getInt("id"));
                 album.setTitle(jsonObject.getString("title"));
                 album.setUrl(jsonObject.getString("url"));
                 album.setThumbnailUrl(jsonObject.getString("thumbnailUrl"));

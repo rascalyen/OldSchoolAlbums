@@ -3,6 +3,7 @@ package com.rascal.oldschoolalbums.page.albumpage;
 import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.widget.ImageView;
+import com.rascal.oldschoolalbums.cache.Cache;
 import com.rascal.oldschoolalbums.network.NetworkUtil;
 import java.lang.ref.WeakReference;
 
@@ -12,14 +13,20 @@ import java.lang.ref.WeakReference;
 class ImageDownloadTask extends AsyncTask<String, Void, Bitmap> {
 
     private final WeakReference<ImageView> imageViewReference;
+    private final String imageUrl;
 
 
-    ImageDownloadTask(ImageView imageView) {
+    ImageDownloadTask(ImageView imageView, String url) {
         imageViewReference = new WeakReference<>(imageView);
+        imageUrl = url;
     }
 
     @Override
     protected Bitmap doInBackground(String... params) {
+
+        if (Cache.getInstance().getLru().get(imageUrl) != null)
+            return Cache.getInstance().getLru().get(imageUrl);
+
         return NetworkUtil.getBitmap(params[0]);
     }
 
@@ -33,6 +40,9 @@ class ImageDownloadTask extends AsyncTask<String, Void, Bitmap> {
                 imageView.setImageBitmap(bitmap);
             }
         }
+
+        if (Cache.getInstance().getLru().get(imageUrl) == null)
+            Cache.getInstance().getLru().put(imageUrl, bitmap);
     }
 
 }

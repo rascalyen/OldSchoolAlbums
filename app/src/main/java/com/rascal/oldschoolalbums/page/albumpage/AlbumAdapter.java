@@ -29,7 +29,8 @@ class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.AlbumHolder> {
 
         final AlbumDetail album = albums.get(position);
 
-        new ImageDownloadTask(holder.thumbnail).execute(album.getThumbnailUrl());
+        new ImageDownloadTask(holder.thumbnail, album.getThumbnailUrl())
+                .execute(album.getThumbnailUrl());
     }
 
     @Override
